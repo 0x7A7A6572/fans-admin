@@ -1,7 +1,13 @@
-# Vue 3 + Vite
+## 说明
+设计图来源：
+zcool xly小懒猪
+https://www.zcool.com.cn/work/ZNTg3MTg1NjQ=.htm
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+### 架构
+- vite3.1 
+- echarts: "^5.4.0"
+- element-plus : "^2.2.17"
+- vue : "^3.2.37"
+- vue-router : "^4.1.5"
+- vuex : "^4.0.2"
+## 
