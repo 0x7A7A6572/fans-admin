@@ -7,6 +7,7 @@ import LeftMenu from "./components/LeftMenu.vue";
 import FlowChannel from "./components/FlowChannel.vue";
 import TrafficInsight from "./components/TrafficInsight.vue";
 import ExposureData from "./components/ExposureData.vue";
+import BusinessFlowInsight from "./components/BusinessFlowInsight.vue";
 </script>
 
 <template>
@@ -51,6 +52,8 @@ import ExposureData from "./components/ExposureData.vue";
         <!-- 曝光数据 -->
         <ExposureData></ExposureData>
       </el-low>
+      <!-- 商业流量洞察 -->
+      <BusinessFlowInsight></BusinessFlowInsight>
     </el-col>
   </el-row>
 </template>
@@ -60,7 +63,9 @@ import ExposureData from "./components/ExposureData.vue";
   --mainBg: rgb(26, 25, 30);
   --cardBg: rgb(32, 33, 42);
   --strongText: rgb(248, 181, 1);
+  --strongTextShadow: rgba(248, 182, 1, 0.247);
   --strongText2: rgb(49, 150, 255);
+  --strongText2Shadow: rgba(49, 149, 255, 0.247);
   --mainText: rgb(230, 230, 230);
   --secondText: rgb(188, 188, 188);
   --notImportantText: rgb(88, 88, 88);
@@ -76,6 +81,13 @@ import ExposureData from "./components/ExposureData.vue";
   padding: 15px;
   margin: 15px;
 }
+
+.is-title{
+  font-weight: bold;
+  padding: 5px 15px;
+  display: block;
+}
+
 body {
   margin: 0px;
 }

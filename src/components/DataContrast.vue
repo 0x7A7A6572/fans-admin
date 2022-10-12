@@ -1,8 +1,9 @@
 <template>
   <div class="data-contrast">
     <span class="distribution-title"
-      >{{ title }}<el-icon><InfoFilled /></el-icon
-    ></span>
+      >{{ title }}
+      <!-- <el-icon><InfoFilled /></el-icon> -->
+      </span>
     <p>
       <span
         class="detalis__strong"
