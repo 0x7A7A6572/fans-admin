@@ -3,6 +3,8 @@
 zcool xly小懒猪
 https://www.zcool.com.cn/work/ZNTg3MTg1NjQ=.htm
 
+目的主要是练习数据可视化
+
 ### 架构
 - vite3.1 
 - echarts: "^5.4.0"
