@@ -44,24 +44,52 @@
     <el-col :span="24">
       <div id="playTrend"></div>
     </el-col>
+    <!-- 达人粉丝量级 -->
+    <el-col :span="13">
+      <span class="is-title">达人粉丝量级</span>
+      <DistrDubble
+        :max="30"
+        :min="0"
+        :grade="['<1', '1-10W', '10-100W', '100w-500w', '500-1000w', '>1000w']"
+        :thisProduct="[0, 9, 15, 24, 4, 2]"
+        :competitors="[0, 9, 3, 10, 1, 0]"
+      ></DistrDubble>
+    </el-col>
+    <!-- 达人类别分布 -->
+    <el-col :span="11">
+      <span class="is-title"> 达人类别分布 </span>
+      <DistrDubbleTag
+        :thisProduct="thisProduct"
+        :competitors="competitors"
+      ></DistrDubbleTag>
+    </el-col>
   </el-row>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import DistrDubble from "./DistrDubble.vue";
+import DistrDubbleTag from "./DistrDubbleTag.vue";
+import { onMounted, ref } from "vue";
 import DataContrast from "./DataContrast.vue";
 import * as echarts from "echarts";
 
 let playTrendChartDom;
+let playTrendChart;
 let timerChartDwar;
 onMounted(() => {
   // init();
   timerChartDwar = setTimeout(init, 100);
+  // 监听屏幕宽度变化：当浏览器发生resize事件的时候，触发echart的resize事件，重绘canvas
+  window.addEventListener("resize", () => {
+    changeWidth();
+  });
 });
-
+function changeWidth() {
+  playTrendChart.resize();
+}
 function init() {
   playTrendChartDom = document.getElementById("playTrend");
-  let playTrendChart = echarts.init(playTrendChartDom);
+  playTrendChart = echarts.init(playTrendChartDom);
   var option;
 
   option = {
@@ -106,16 +134,15 @@ function init() {
       orient: "horizontal",
       //  color: "#fff",
       data: [
-    {
-      name: '本品',
-      icon: 'circle',
-    },
-    {
-      name: '竞品',
-      icon: 'circle',
-     
-    }
-  ]
+        {
+          name: "本品",
+          icon: "circle",
+        },
+        {
+          name: "竞品",
+          icon: "circle",
+        },
+      ],
     },
     xAxis: [
       {
@@ -221,6 +248,60 @@ function init() {
   option && playTrendChart.setOption(option);
   clearTimeout(timerChartDwar);
 }
+
+/* 数据 */
+let thisProduct = ref([
+  {
+    class: "美食",
+    percentage: "29.4%",
+  },
+  {
+    class: "剧情搞笑",
+    percentage: "19.6%",
+  },
+  {
+    class: "颜值达人",
+    percentage: "19.6%",
+  },
+  {
+    class: "运动健身",
+    percentage: "9.8%%",
+  },
+  {
+    class: "时尚",
+    percentage: "3.9%",
+  },
+  {
+    class: "二次元",
+    percentage: "3.9%",
+  },
+]);
+let competitors = ref([
+  {
+    class: "剧情搞笑",
+    percentage: "29.4%",
+  },
+  {
+    class: "颜值达人",
+    percentage: "23.5%",
+  },
+  {
+    class: "生活",
+    percentage: "23.5%",
+  },
+  {
+    class: "美妆",
+    percentage: "11.8%%",
+  },
+  {
+    class: "测评",
+    percentage: "5.9%",
+  },
+  {
+    class: "财经投资",
+    percentage: "5.9%",
+  },
+]);
 </script>
 
 <style>
