@@ -250,36 +250,43 @@ function init() {
 let rankingList = [
   {
     name: "吃货的世界",
+    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration11.png",
     salesCount: 6531,
     salesVolume: 171000,
   },
   {
     name: "地主家的傻女儿",
+     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration1.png",
     salesCount: 5133,
     salesVolume: 159000,
   },
   {
     name: "我的零食铺",
+     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration2.png",
     salesCount: 5678,
     salesVolume: 146000,
   },
   {
     name: "大胖",
+     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration4.png",
     salesCount: 1985,
     salesVolume: 99000,
   },
   {
     name: "大叔就爱吃",
+     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration5.png",
     salesCount: 2543,
     salesVolume: 67000,
   },
   {
     name: "美食家",
+     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration6.png",
     salesCount: 694,
     salesVolume: 60000,
   },
   {
     name: "姐弟一起吃",
+     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration9.png",
     salesCount: 2699,
     salesVolume: 67000,
   },
