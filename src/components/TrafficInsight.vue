@@ -15,7 +15,7 @@
       <div id="hotmap"></div>
     </el-col>
     <el-col :span="8" class="cardStyle">
-      <PopularLite></PopularLite>
+      <PopularList></PopularList>
     </el-col>
   </el-row>
 </template>
@@ -23,7 +23,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import * as echarts from "echarts";
-import PopularLite from "./PopularLite.vue";
+import PopularList from "./PopularList.vue";
 let myChart;
 function init() {
   var chartDom = document.getElementById("hotmap");
