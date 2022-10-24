@@ -1,66 +1,63 @@
 <template>
   <el-row class="left-menu">
-    <el-col :span="24" style="position: fixed;">
+    <el-col :span="24" style="position: fixed">
       <!-- <h5 class="mb-2">Custom colors</h5> -->
-        <!-- active-text-color="#ffd04b"
+      <!-- active-text-color="#ffd04b"
         background-color="#545c64" 
          text-color="#fff"-->
       <el-menu
-    
         class="el-menu-vertical"
         default-active="2"
-        background-color="var(--mainBg)" 
+        background-color="var(--mainBg)"
         text-color="var(--mainText)"
         active-text-color="var(--strongText)"
         @open="handleOpen"
         @close="handleClose"
       >
-        <el-sub-menu index="1">
+        <el-menu-item index="1">
           <template #title>
             <el-icon><House /></el-icon>
             <span>首页</span>
           </template>
-          <el-menu-item-group title="Group One">
-            <el-menu-item index="1-1">item one</el-menu-item>
-            <el-menu-item index="1-2">item two</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="Group Two">
-            <el-menu-item index="1-3">item three</el-menu-item>
-          </el-menu-item-group>
-          <el-sub-menu index="1-4">
-            <template #title>item four</template>
-            <el-menu-item index="1-4-1">item one</el-menu-item>
-          </el-sub-menu>
-        </el-sub-menu>
+        </el-menu-item>
         <el-sub-menu index="2">
           <template #title>
             <el-icon><PieChart /></el-icon>
             <span>品牌流量渠道</span>
           </template>
-          <el-menu-item-group title="Group One">
-            <el-menu-item index="2-1">item one</el-menu-item>
-            <el-menu-item index="2-2">item two</el-menu-item>
-          </el-menu-item-group>
+          <!-- <el-menu-item-group title="Group One"> -->
+          <el-menu-item index="2-1">渠道成长概况</el-menu-item>
+          <el-menu-item index="2-2">渠道评估优化</el-menu-item>
+          <!-- </el-menu-item-group> -->
         </el-sub-menu>
         <el-sub-menu index="3">
           <template #title>
             <el-icon><Wallet /></el-icon>
             <span>达人与粉丝资产</span>
           </template>
+          <el-menu-item-group title="达人资产概况">
+            <el-menu-item index="3-1">短视频达人</el-menu-item>
+            <el-menu-item index="3-2">带货主播</el-menu-item>
+            <el-menu-item index="3-3">KOC</el-menu-item>
+          </el-menu-item-group>
         </el-sub-menu>
         <el-sub-menu index="4">
           <template #title>
             <el-icon><Medal /></el-icon>
             <span>品牌流量洞察</span>
           </template>
+          <el-menu-item index="4-1">行业竞品分析</el-menu-item>
+          <el-menu-item index="4-2">品牌声量追踪</el-menu-item>
         </el-sub-menu>
-        <el-sub-menu index="4">
+        <el-sub-menu index="5">
           <template #title>
             <el-icon><ShoppingBag /></el-icon>
             <span>商业流量洞察</span>
           </template>
+          <el-menu-item index="5-1">行业竞品分析</el-menu-item>
+          <el-menu-item index="5-2">商品带货检测</el-menu-item>
         </el-sub-menu>
-        <el-menu-item index="4">
+        <el-menu-item index="6">
           <el-icon><User /></el-icon>
           <span>账户中心</span>
         </el-menu-item>
@@ -78,11 +75,19 @@ const handleClose = (key, keyPath) => {
 };
 </script>
 <style scoped>
-.left-menu{
+.left-menu {
   background-color: var(--mainBg);
   height: 100%;
 }
-.el-menu-vertical{
+.el-menu-vertical {
   border-right: none;
+}
+.el-sub-menu__title * {
+  font-weight: bold;
+  font-size: 16px;
+}
+.el-menu-item > span {
+  font-weight: bold;
+  font-size: 16px;
 }
 </style>
