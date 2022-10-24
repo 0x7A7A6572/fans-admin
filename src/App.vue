@@ -10,7 +10,7 @@ import channel from "./channel/index.vue";
 </script>
 
 <template>
-  <el-row>
+  <el-row class="main">
     <!-- 顶部导航栏nav -->
     <el-col :span="24" class="nav-admin"><NavAdmin></NavAdmin> </el-col>
     <!-- 侧边菜单栏 -->
@@ -21,8 +21,10 @@ import channel from "./channel/index.vue";
    
     <el-col :span="20" class="main-contorl">
         <!-- 品牌流量渠道 -->
-       <channel></channel>
+       <!--channel></channel-->
+        <router-view></router-view>
     </el-col>
+
   </el-row>
 </template>
 
@@ -58,7 +60,9 @@ import channel from "./channel/index.vue";
 
 body {
   margin: 0px;
+  min-width: 1200px;
 }
+
 .nav-admin {
   position: relative;
 }
