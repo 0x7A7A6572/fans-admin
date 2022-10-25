@@ -4,7 +4,7 @@
 import NavAdmin from "./components/NavAdmin.vue";
 // import { ElAffix, ElPageHeader, ElTag, ElAvatar, ElButton } from "element-plus";
 import LeftMenu from "./components/LeftMenu.vue";
-import channel from "./channel/index.vue";
+import channel from "./pages/index/components/index.vue";
 
 
 </script>
@@ -20,8 +20,6 @@ import channel from "./channel/index.vue";
     <!-- 主面板 -->
    
     <el-col :span="20" class="main-contorl">
-        <!-- 品牌流量渠道 -->
-       <!--channel></channel-->
         <router-view></router-view>
     </el-col>
 
@@ -32,6 +30,8 @@ import channel from "./channel/index.vue";
 :root {
   --mainBg: rgb(26, 25, 30);
   --cardBg: rgb(32, 33, 42);
+  --cardItem: rgb(41,42,51);
+  --cardItemHover: rgb(62, 63, 71);
   --strongText: rgb(248, 181, 1);
   --strongTextShadow: rgba(248, 182, 1, 0.247);
   --strongText2: rgb(49, 150, 255);
@@ -41,6 +41,11 @@ import channel from "./channel/index.vue";
   --notImportantText: rgb(88, 88, 88);
   --success: rgb(0, 255, 21);
   --error: rgb(255,33,55);
+  
+}
+
+ .el-menu{
+  --muneActivte: rgba(41,42,51);
 }
 
 .cardStyle {
@@ -61,8 +66,13 @@ import channel from "./channel/index.vue";
 body {
   margin: 0px;
   min-width: 1200px;
+  background-color: var(--mainBg);
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
 .nav-admin {
   position: relative;
 }

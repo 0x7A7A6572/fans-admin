@@ -7,11 +7,6 @@
       </template>
       <template #content>
         <div class="flex header-nav-title">
-          <!-- <el-avatar
-              :size="22" 
-              class="mr-3"
-              src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-            /> -->
           <span class="text-large"> 企业流量中台 </span>
           <el-icon class="menu-contorl"><Expand /></el-icon>
           <!-- <el-tag>Default</el-tag> -->

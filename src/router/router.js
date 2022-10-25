@@ -1,9 +1,14 @@
+//配置路由页面
 const routes = [
-    /*{
+    {
+        path: '/',
+        component: () => import('../pages/index/index.vue')
+    },
+    {
         name: 'index',
         path: '/index',
-        component: () => import('../pages/index')
-    },*/
+        component: () => import('../pages/index/index.vue')
+    },
     {
         name: 'channel',
         path: '/channel',
@@ -11,11 +16,9 @@ const routes = [
     },
         {
         name: 'overview',
-        path: '/overview',
+        path: '/channel/overview',
         component: () => import('../pages/channel/overview/overview.vue')
     },
-    
-    
 ];
 
 export default routes

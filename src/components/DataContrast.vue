@@ -11,7 +11,7 @@
           color: color,
         }"
         >{{ value }}</span
-      >
+      ><br/>
       <span>较上周</span>
       <span v-if="percentage > 0">
         <el-icon color="var(--error)"><CaretTop /></el-icon>

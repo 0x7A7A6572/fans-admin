@@ -6,6 +6,7 @@ import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import router from './router';
 
+import DataContrast from "./components/DataContrast.vue";
 
 import {
   ElAffix,
@@ -25,7 +26,9 @@ app.component("elAffix", ElAffix)
   .component("ElAvatar", ElAvatar)
   .component("ElButton", ElButton)
   .component("ElCol", ElCol)
-  .component("ElRow", ElRow);
+  .component("ElRow", ElRow)
+
+  .component("DataContrast",DataContrast);
 app.use(ElementPlus);
 /* 导入图标 */
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

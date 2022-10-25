@@ -1,6 +1,6 @@
 <template>
   <el-row class="left-menu">
-    <el-col :span="24" style="position: fixed">
+    <el-col :span="24" style="position: fixed; height: 100vh">
       <!-- <h5 class="mb-2">Custom colors</h5> -->
       <!-- active-text-color="#ffd04b"
         background-color="#545c64" 
@@ -16,8 +16,10 @@
       >
         <el-menu-item index="1">
           <template #title>
-            <el-icon><House /></el-icon>
-            <span>首页</span>
+            <router-link to="/index">
+              <el-icon><HomeFilled /></el-icon>
+              <span>首页</span>
+            </router-link>
           </template>
         </el-menu-item>
         <el-sub-menu index="2">
@@ -27,14 +29,10 @@
           </template>
           <!-- <el-menu-item-group title="Group One"> -->
           <el-menu-item index="2-1">
-          <router-link to="/channel">
-          渠道成长概况
-          </router-link>
+            <router-link to="/channel/overview"> 渠道成长概况 </router-link>
           </el-menu-item>
           <el-menu-item index="2-2">
-           <router-link to="/channel/overview">
-          渠道评估优化
-          </router-link>
+            <router-link to="/channel/overview"> 渠道评估优化 </router-link>
           </el-menu-item>
           <!-- </el-menu-item-group> -->
         </el-sub-menu>
@@ -89,6 +87,7 @@ const handleClose = (key, keyPath) => {
 }
 .el-menu-vertical {
   border-right: none;
+  height: 100%;
 }
 .el-sub-menu__title * {
   font-weight: bold;
@@ -97,5 +96,22 @@ const handleClose = (key, keyPath) => {
 .el-menu-item > span {
   font-weight: bold;
   font-size: 16px;
+}
+/** 深层次的active应用 */
+.el-menu-item a{
+ color: white;
+ text-decoration: none;
+ width: 100%;
+}
+.el-menu-item.is-active a{
+ color: var(--el-menu-active-color);
+ text-decoration: none;
+}
+.el-menu-item.is-active{
+ /* background-color: rgba(248, 181, 1, 0.3); */
+ background-color: var(--muneActivte);
+}
+.el-sub-menu__title{
+  justify-content: left;
 }
 </style>
