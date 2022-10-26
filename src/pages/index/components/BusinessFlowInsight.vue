@@ -10,7 +10,6 @@
             type="daterange"
             start-placeholder="2022-10-09"
             end-placeholder="2022-10-30"
-            :default-time="defaultTime"
           />
           <el-button-group class="ml-4 switch-list">
             <el-button class="active">本品</el-button>
@@ -55,9 +54,7 @@
     </el-col>
     <el-col :span="8">
       <div class="cardStyle">
-        <PopularSimpleList
-        :rankingList="rankingList"
-        ></PopularSimpleList>
+        <PopularSimpleList :rankingList="rankingList"></PopularSimpleList>
       </div>
     </el-col>
   </el-row>
@@ -178,12 +175,12 @@ function init() {
         color: "rgb(248, 181, 1)",
         itemStyle: {
           //颜色渐变代码
-          normal: {
-            color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
-              { offset: 0, color: "rgb(248, 141, 1)" },
-              { offset: 1, color: "rgb(255, 241, 15)" },
-            ]),
-          },
+          // normal: {
+          color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+            { offset: 0, color: "rgb(248, 141, 1)" },
+            { offset: 1, color: "rgb(255, 241, 15)" },
+          ]),
+          // },
         },
         tooltip: {
           valueFormatter: function (value) {
@@ -198,12 +195,12 @@ function init() {
         color: "rgb(49, 150, 255)",
         itemStyle: {
           //颜色渐变代码
-          normal: {
-            color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
-              { offset: 0, color: "rgb(99, 100, 255)" },
-              { offset: 1, color: "rgb(49, 180, 255)" },
-            ]),
-          },
+          // normal: {
+          color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+            { offset: 0, color: "rgb(99, 100, 255)" },
+            { offset: 1, color: "rgb(49, 180, 255)" },
+          ]),
+          // },
         },
         tooltip: {
           valueFormatter: function (value) {
@@ -245,7 +242,6 @@ function init() {
   clearTimeout(timerChartDwar);
 }
 
-
 /** 数据 */
 let rankingList = [
   {
@@ -256,37 +252,37 @@ let rankingList = [
   },
   {
     name: "地主家的傻女儿",
-     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration1.png",
+    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration1.png",
     salesCount: 5133,
     salesVolume: 159000,
   },
   {
     name: "我的零食铺",
-     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration2.png",
+    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration2.png",
     salesCount: 5678,
     salesVolume: 146000,
   },
   {
     name: "大胖",
-     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration4.png",
+    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration4.png",
     salesCount: 1985,
     salesVolume: 99000,
   },
   {
     name: "大叔就爱吃",
-     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration5.png",
+    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration5.png",
     salesCount: 2543,
     salesVolume: 67000,
   },
   {
     name: "美食家",
-     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration6.png",
+    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration6.png",
     salesCount: 694,
     salesVolume: 60000,
   },
   {
     name: "姐弟一起吃",
-     avatar: "https://zzerx.cn/Artwork/art/illustration/illustration9.png",
+    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration9.png",
     salesCount: 2699,
     salesVolume: 67000,
   },

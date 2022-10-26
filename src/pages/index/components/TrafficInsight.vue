@@ -40,7 +40,7 @@ function init() {
     for (var time = date; time < end; time += dayTime) {
       count++;
       data.push([
-        echarts.format.formatTime("yyyy-MM-dd", time),
+        echarts.time.format(time, "yyyy-MM-dd"),
         Math.floor(Math.random() * 10),
       ]);
       if (count > 180) {

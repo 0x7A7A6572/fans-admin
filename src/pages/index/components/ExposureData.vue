@@ -8,7 +8,6 @@
         type="daterange"
         start-placeholder="2022-10-09"
         end-placeholder="2022-10-30"
-        :default-time="defaultTime"
       />
     </el-col>
     <!-- 数据比较 -->
@@ -182,12 +181,12 @@ function init() {
         color: "rgb(248, 181, 1)",
         itemStyle: {
           //颜色渐变代码
-          normal: {
-            color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
-              { offset: 0, color: "rgb(248, 141, 1)" },
-              { offset: 1, color: "rgb(255, 241, 15)" },
-            ]),
-          },
+          // normal: {
+          color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+            { offset: 0, color: "rgb(248, 141, 1)" },
+            { offset: 1, color: "rgb(255, 241, 15)" },
+          ]),
+          // },
         },
         tooltip: {
           valueFormatter: function (value) {
@@ -202,12 +201,12 @@ function init() {
         color: "rgb(49, 150, 255)",
         itemStyle: {
           //颜色渐变代码
-          normal: {
-            color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
-              { offset: 0, color: "rgb(99, 100, 255)" },
-              { offset: 1, color: "rgb(49, 180, 255)" },
-            ]),
-          },
+          // normal: {
+          color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+            { offset: 0, color: "rgb(99, 100, 255)" },
+            { offset: 1, color: "rgb(49, 180, 255)" },
+          ]),
+          // },
         },
         tooltip: {
           valueFormatter: function (value) {
