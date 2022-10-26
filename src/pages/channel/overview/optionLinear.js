@@ -26,17 +26,18 @@ export default {
     }
   },
   grid: {
-    left: '0%',
-    // right: '0%',
-    bottom: '0%',
-    containLabel: true
+    left: '-20%',
+    right: '10%',
+    bottom: '10%',
+    top: '20%',
+    containLabel: false
   },
   xAxis: [
     {
       show: false,
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun','Mon2', 'Tue2', 'Wed2', 'Thu2', 'Fri2', 'Sat2', 'Sun2' ]
     }
   ],
   yAxis: [
@@ -52,9 +53,10 @@ export default {
       stack: 'Total',
       smooth: true,
       lineStyle: {
-        width: 0
+        width: 2,
+        color: 'rgb(49, 150, 255)'
       },
-      showSymbol: false,
+      showSymbol: false, //不显示所有数据点
       areaStyle: {
         opacity: 0.8,
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -71,7 +73,7 @@ export default {
       emphasis: {
         focus: 'series'
       },
-      data: [320, 132, 201, 334, 190, 130, 220]
+      data: [320, 132, 401, 334, 520, 330, 220,320, 132, 201, 334, 190, 130, 220]
     }
   ]
 }

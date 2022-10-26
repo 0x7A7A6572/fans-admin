@@ -142,6 +142,6 @@ function init() {
 }
 #overviewSmallChart {
   width: 200px;
-  height: 100px;
+  /* height: 150px; */
 }
 </style>
