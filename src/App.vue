@@ -5,8 +5,6 @@ import NavAdmin from "./components/NavAdmin.vue";
 // import { ElAffix, ElPageHeader, ElTag, ElAvatar, ElButton } from "element-plus";
 import LeftMenu from "./components/LeftMenu.vue";
 import channel from "./pages/index/components/index.vue";
-
-
 </script>
 
 <template>
@@ -18,11 +16,10 @@ import channel from "./pages/index/components/index.vue";
       <LeftMenu></LeftMenu>
     </el-col>
     <!-- 主面板 -->
-   
-    <el-col :span="20" class="main-contorl">
-        <router-view></router-view>
-    </el-col>
 
+    <el-col :span="20" class="main-contorl">
+      <router-view></router-view>
+    </el-col>
   </el-row>
 </template>
 
@@ -30,7 +27,7 @@ import channel from "./pages/index/components/index.vue";
 :root {
   --mainBg: rgb(26, 25, 30);
   --cardBg: rgb(32, 33, 42);
-  --cardItem: rgb(41,42,51);
+  --cardItem: rgb(41, 42, 51);
   --cardItemHover: rgb(62, 63, 71);
   --strongText: rgb(248, 181, 1);
   --strongTextShadow: rgba(248, 182, 1, 0.247);
@@ -38,26 +35,30 @@ import channel from "./pages/index/components/index.vue";
   --strongText2Shadow: rgba(49, 149, 255, 0.247);
   --mainText: rgb(230, 230, 230);
   --secondText: rgb(188, 188, 188);
+  --thirdText: rgb(113, 114, 123);
   --notImportantText: rgb(88, 88, 88);
   --success: rgb(0, 255, 21);
-  --error: rgb(255,33,55);
-  
+  --error: rgb(255, 33, 55);
 }
 
- .el-menu{
-  --muneActivte: rgba(41,42,51);
+.el-menu {
+  --muneActivte: rgba(41, 42, 51);
 }
 
+.cardBox {
+  margin: 15px;
+}
 .cardStyle {
   background-color: var(--cardBg);
   /* height: 320px; */
   min-height: 300px;
   border-radius: 12px;
   padding: 15px;
-  margin: 15px;
+  /* margin设置会导致col溢出 */
+  /* */
 }
 
-.is-title{
+.is-title {
   font-weight: bold;
   padding: 5px 15px;
   display: block;
@@ -69,7 +70,7 @@ body {
   background-color: var(--mainBg);
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
 }

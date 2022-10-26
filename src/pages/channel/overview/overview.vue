@@ -1,9 +1,10 @@
 <template>
   <el-row class="overview">
+    <!-- 本品抖音流量渠道概览 -->
     <el-col :span="24">
       <h2>本品抖音流量渠道概览</h2>
     </el-col>
-    <el-col :span="24">
+    <el-col :span="24" class="cardBox">
       <el-row class="cardStyle">
         <el-col class="cardStyle-group" :span="8">
           <div class="cardStyle-item date-select">
@@ -36,6 +37,97 @@
         </el-col>
         <el-col :span="16">
           <div id="overviewReder"></div>
+          <a class="desc-link-right" href="#">
+            <el-icon color="var(--secondText)" size="16">
+              <QuestionFilled /></el-icon
+            ><span>了解渠道流量价值评估模型?</span>
+          </a>
+        </el-col>
+      </el-row>
+    </el-col>
+    <!-- 流量持有策略 -->
+    <el-col :span="24">
+      <h3>
+        流量持有策略
+        <a class="desc-link" href="#">
+          <el-icon color="var(--secondText)" size="16">
+            <QuestionFilled /></el-icon
+          ><span>了解渠道流量价值评估模型?</span>
+        </a>
+      </h3>
+    </el-col>
+    <el-col :span="24" class="cardBox">
+      <el-row class="cardStyle overview-card-title">
+        <DataContrast
+          title="渠道资源数"
+          value="478"
+          :percentage="103"
+          color="var(--strongText)"
+        ></DataContrast>
+        <DataContrast
+          title="渠道粉丝覆盖"
+          value="5,6786.2w"
+          :percentage="11.3"
+          color="var(--strongText)"
+        ></DataContrast>
+      </el-row>
+      <el-row :gutter="20" class="cardBox">
+        <el-col :span="8">
+          <div class="cardStyle overview-card-group">
+            <p>短视频达人</p>
+            <div class="overview-card-item">
+              <DataContrast
+                title="数量"
+                value="142"
+                :percentage="1"
+                color="var(--strongText)"
+              ></DataContrast>
+              <DataContrast
+                title="粉丝覆盖量"
+                value="5,812.2w"
+                :percentage="1"
+                color="var(--strongText)"
+              ></DataContrast>
+            </div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="cardStyle overview-card-group">
+            <p>带货主播</p>
+            <div class="overview-card-item">
+              <DataContrast
+                title="数量"
+                value="36"
+                :percentage="7"
+                color="var(--strongText)"
+              ></DataContrast>
+              <DataContrast
+                title="粉丝覆盖量"
+                value="2,286.2w"
+                :percentage="10"
+                color="var(--strongText)"
+              ></DataContrast>
+            </div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="cardStyle overview-card-group">
+            <p>KOC</p>
+            <div class="overview-card-item">
+              <DataContrast
+                title="数量"
+                value="336"
+                :percentage="65"
+                color="var(--strongText)"
+              ></DataContrast>
+              <DataContrast
+                title="粉丝覆盖量"
+                value="1,411.3w"
+                :percentage="36"
+                color="var(--strongText)"
+              ></DataContrast>
+            </div>
+          </div>
         </el-col>
       </el-row>
     </el-col>
@@ -85,63 +177,5 @@ function init() {
 </script>
 
 <style scoped>
-.cardStyle-group {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.cardStyle-item {
-  display: flex;
-  align-items: center;
-  color: var(--secondText);
-  font-size: smaller;
-  font-weight: bold;
-  padding: 20px;
-  background-color: var(--cardItem);
-  margin: 10px 0px;
-}
-.cardStyle-item.date-select {
-  display: flex;
-  justify-content: space-between;
-}
-.cardStyle-item:hover {
-  background-color: var(--cardItemHover);
-}
-.overview-small {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.overview .cardStyle-item:nth-child(2) {
-  text-align: left;
-  flex-direction: column;
-}
-.overview .cardStyle-item:nth-child(2) > span {
-  width: 100%;
-  padding-bottom: 8px;
-}
-.overview .cardStyle-item:nth-child(3) {
-  justify-content: space-between;
-}
-.overview .cardStyle-item:nth-child(3) span {
-  display: flex;
-  align-items: center;
-}
-.overview .cardStyle-item:nth-child(3) span .el-icon {
-  margin-right: 10px;
-  border-radius: 50%;
-  padding: 5px;
-  background-color: var(--strongText2Shadow);
-}
-
-#overviewReder {
-  width: 100%;
-  min-width: 200px;
-  height: 100%;
-}
-#overviewSmallChart {
-  width: 200px;
-  /* height: 150px; */
-}
+@import "../channel.css";
 </style>
