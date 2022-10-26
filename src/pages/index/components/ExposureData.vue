@@ -94,7 +94,7 @@ function init() {
   option = {
     top: 20,
     left: 10,
-    right: 10,
+    right: 30,
     barWidth: "25%",
     title: {
       top: 0,

@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row class="cardBox" :gutter="20">
     <el-col :span="16">
       <div class="cardStyle">
         <!-- 标题 -->
@@ -290,6 +290,9 @@ let rankingList = [
 </script>
 
 <style scoped>
+.popular-lite-title{
+  display: flex !important;
+}
 .cardKK {
   background-color: var(--cardBg);
   min-height: 300px;
@@ -326,4 +329,5 @@ let rankingList = [
   height: 350px;
   width: 100%;
 }
+
 </style>

@@ -1,21 +1,24 @@
 <template>
-<!-- el-row 位置超出屏幕外 14+10 产生了换行 -->
- <el-row :span="24" style="justify-content: space-around;">
-    <el-col :span="14" class="hotmap-view cardStyle">
-      <div class="hotmap-title">
-        <span>营销动态</span>
-        <div>
-          <el-checkbox checked>本品</el-checkbox>
-          <el-checkbox checked>竞品</el-checkbox>
-          <select placeholder="获赞" class="hotmap-select">
-            <option value="huozhan">获赞</option>
-          </select>
+  <el-row class="cardBox" :gutter="20">
+    <el-col :span="16" >
+      <div class="cardStyle ti-cardHeight">
+        <div class="hotmap-title">
+          <span>营销动态</span>
+          <div>
+            <el-checkbox checked>本品</el-checkbox>
+            <el-checkbox checked>竞品</el-checkbox>
+            <select placeholder="获赞" class="hotmap-select">
+              <option value="huozhan">获赞</option>
+            </select>
+          </div>
         </div>
+        <div id="hotmap"></div>
       </div>
-      <div id="hotmap"></div>
     </el-col>
-    <el-col :span="8" class="cardStyle">
-      <PopularList></PopularList>
+    <el-col :span="8" >
+      <div class="cardStyle ti-cardHeight">
+        <PopularList></PopularList>
+      </div>
     </el-col>
   </el-row>
 </template>
@@ -69,7 +72,7 @@ function init() {
       type: "piecewise",
       orient: "horizontal",
       left: 80,
-      top: 190,
+      top: 250,
       inRange: {
         color: [
           "rgb(88, 88, 88)",
@@ -81,7 +84,7 @@ function init() {
       },
     },
     calendar: {
-      top: 10,
+      top: 50,
       left: 40,
       right: 30,
       cellSize: [25, 25],
@@ -119,6 +122,7 @@ function init() {
 
 let timmerEchar = null;
 onMounted(() => {
+  init();
   timmerEchar = setTimeout(init, 100);
   // 监听屏幕宽度变化：当浏览器发生resize事件的时候，触发echart的resize事件，重绘canvas
   window.addEventListener("resize", () => {
@@ -131,6 +135,9 @@ function changeWidth() {
 </script>
 
 <style scoped>
+.trafficInsight {
+  /* width: 100%; */
+}
 .hotmap-view {
   padding: 15px;
   height: fit-content;
@@ -140,7 +147,8 @@ function changeWidth() {
   /* flex-direction: column; */
 }
 #hotmap {
-  min-height: 230px;
+  height: 80%;
+  /* min-height: 230px; */
   /* min-width: 300px; */
   /* height: 180px; */
   /* width: 200px; */
@@ -179,5 +187,10 @@ function changeWidth() {
 /* //修改选中后文本的颜色 */
 .el-checkbox__input.is-checked + .el-checkbox__label {
   color: rgb(248, 181, 1) !important;
+}
+
+/** 同类卡片高度 */
+.ti-cardHeight{
+  height: 360px;
 }
 </style>

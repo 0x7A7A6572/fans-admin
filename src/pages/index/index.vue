@@ -25,9 +25,13 @@
         ></span>
       </el-col>
       <!-- 品牌流量洞察左右卡片 -->
-      <TrafficInsight></TrafficInsight>
+      <el-col :span="24">
+        <TrafficInsight></TrafficInsight>
+      </el-col>
       <!-- 曝光数据 -->
-      <ExposureData></ExposureData>
+      <el-col :span="24">
+        <ExposureData></ExposureData>
+      </el-col>
     </el-row>
     <!-- 商业流量洞察 -->
     <BusinessFlowInsight></BusinessFlowInsight>

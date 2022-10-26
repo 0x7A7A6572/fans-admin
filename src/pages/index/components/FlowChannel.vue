@@ -1,7 +1,7 @@
 <template>
-  <el-row :span="24" style="align-items: center;flex: auto;">
+  <el-row :gutter="20" class="cardBox ">
     <el-col :span="10" class="flow-data">
-      <div class="cardStyle">
+      <div class="cardStyle fc-cardHeight">
         <span class="fast-flex"
           >流量类型分布<el-icon><InfoFilled /></el-icon
         ></span>
@@ -13,7 +13,7 @@
       <!-- 达人短视频数据(open) / 直播带货数据 / KOC种草数据 -->
       <el-tabs
         v-model="activeName"
-        class="cardStyle distribution"
+        class="cardStyle distribution fc-cardHeight"
       >
         <el-tab-pane label="达人短视频数据" name="first">
           <!-- 达人短视频数据 -->
@@ -232,5 +232,9 @@ function changeWidthFC() {
   height: 1px !important;
   background-color: var(--notImportantText) !important;
   z-index: var(--el-index-normal);
+}
+/** 同类卡片高度 */
+.fc-cardHeight{
+  height: 320px;
 }
 </style>
