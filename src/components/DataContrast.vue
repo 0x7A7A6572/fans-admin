@@ -52,5 +52,6 @@ const props = defineProps({
 } */
 .data-contrast{
   padding: 5px;
+  color: var(--thirdText);
 }
 </style>
