@@ -9,16 +9,22 @@ const routes = [
         path: '/index',
         component: () => import('../pages/index/index.vue')
     },
+    // {
+    //     name: 'channel',
+    //     path: '/channel',
+    //     component: () => import('../pages/channel/channel.vue')
+    // },
     {
-        name: 'channel',
-        path: '/channel',
-        component: () => import('../pages/channel/channel.vue')
-    },
-        {
         name: 'overview',
         path: '/channel/overview',
         component: () => import('../pages/channel/overview/overview.vue')
     },
+    {
+        name: 'optimization',
+        path: '/channel/optimization',
+        component: () => import('../pages/channel/optimization/optimization.vue')
+    }
+
 ];
 
 export default routes

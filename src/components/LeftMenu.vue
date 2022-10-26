@@ -32,7 +32,7 @@
             <router-link to="/channel/overview"> 渠道成长概况 </router-link>
           </el-menu-item>
           <el-menu-item index="2-2">
-            <router-link to="/channel/overview"> 渠道评估优化 </router-link>
+            <router-link to="/channel/optimization"> 渠道评估优化 </router-link>
           </el-menu-item>
           <!-- </el-menu-item-group> -->
         </el-sub-menu>
