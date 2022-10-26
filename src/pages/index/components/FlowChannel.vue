@@ -14,7 +14,6 @@
       <el-tabs
         v-model="activeName"
         class="cardStyle distribution"
-        @tab-click="handleClick"
       >
         <el-tab-pane label="达人短视频数据" name="first">
           <!-- 达人短视频数据 -->

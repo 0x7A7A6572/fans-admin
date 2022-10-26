@@ -14,7 +14,7 @@
       <FlowChannel></FlowChannel>
     </el-row>
     <!-- 品牌流量洞察 -->
-    <el-low>
+    <el-row>
       <el-col :span="24" class="main-contorl-title">
         <div>
           <span class="main-contorl-title__mian">品牌流量洞察</span>
@@ -25,12 +25,10 @@
         ></span>
       </el-col>
       <!-- 品牌流量洞察左右卡片 -->
-      <!-- <el-low > -->
       <TrafficInsight></TrafficInsight>
-      <!-- </el-low> -->
       <!-- 曝光数据 -->
       <ExposureData></ExposureData>
-    </el-low>
+    </el-row>
     <!-- 商业流量洞察 -->
     <BusinessFlowInsight></BusinessFlowInsight>
   </view>
