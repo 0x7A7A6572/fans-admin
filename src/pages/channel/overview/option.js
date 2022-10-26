@@ -8,7 +8,14 @@ export default {
     show: false,
     data: ["Allocated Budget", "渠道上周各指数得分情况"],
   },
-
+  toolbox: {
+    show: true,
+    feature: {
+      saveAsImage: {
+        title: "导出图片"
+      }
+    }
+  },
   radar: {
     splitArea: {
       show: false,
@@ -34,10 +41,12 @@ export default {
         {
           value: [98.2, 69.6, 66.5, 95.6, 80.3],
           lineStyle: {
-            normal: {
-              type: "solid",
-              color: "rgba(49, 149, 255, 0)",
-            },
+            type: "solid",
+            color: "rgba(49, 149, 255, 0)",
+            // normal: {
+            //   type: "solid",
+            //   color: "rgba(49, 149, 255, 0)",
+            // },
           },
           itemStyle: {
             color: "rgba(49, 149, 255, 0.247)",
@@ -46,10 +55,12 @@ export default {
         },
         {
           lineStyle: {
-            normal: {
-              color: "white",
-              type: "dashed",
-            },
+            color: "white",
+            type: "dashed",
+            // normal: {
+            //   color: "white",
+            //   type: "dashed",
+            // },
           },
           itemStyle: {
             color: "rgba(49, 149, 255, 0.247)",

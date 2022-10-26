@@ -8,25 +8,25 @@ import router from './router';
 
 import DataContrast from "./components/DataContrast.vue";
 
-import {
-  ElAffix,
-  ElPageHeader,
-  ElTag,
-  ElAvatar,
-  ElButton,
-  ElCol,
-  ElRow
-} from "element-plus";
+// import {
+//   ElAffix,
+//   ElPageHeader,
+//   ElTag,
+//   ElAvatar,
+//   ElButton,
+//   ElCol,
+//   ElRow
+// } from "element-plus";
 
 const app = createApp(App);
 /* 全局组件 */
-app.component("elAffix", ElAffix)
-  .component("elPageHeader", ElPageHeader)
-  .component("ElTag", ElTag)
-  .component("ElAvatar", ElAvatar)
-  .component("ElButton", ElButton)
-  .component("ElCol", ElCol)
-  .component("ElRow", ElRow)
+app//.component("elAffix", ElAffix)
+  // .component("elPageHeader", ElPageHeader)
+  // .component("ElTag", ElTag)
+  // .component("ElAvatar", ElAvatar)
+  // .component("ElButton", ElButton)
+  // .component("ElCol", ElCol)
+  // .component("ElRow", ElRow)
 
   .component("DataContrast",DataContrast);
 app.use(ElementPlus);
