@@ -16,12 +16,15 @@
         <div class="flex header-bav-func items-center">
           <el-icon><Search /></el-icon>
           <el-icon><Bell /></el-icon>
-          <el-avatar
-            :size="22"
-            class="mr-3"
-            src="https://zzerx.cn/Artwork/art/illustration/illustration2.png"
-          />
-          <span class="username">NAME</span>
+          <a class="mr-3" href="https://github.com/0x7A7A6572/fans-admin">
+            <el-avatar
+              :size="22"
+              
+              src="/public/github.png"
+              style="background: black"
+            />
+            <span class="username">Github</span>
+          </a>
         </div>
       </template>
     </el-page-header>
@@ -44,7 +47,7 @@
   display: flex;
   align-items: center;
 }
-.menu-contorl{
+.menu-contorl {
   margin: 0px 10px;
 }
 .header-bav-func {

@@ -12,7 +12,7 @@
       <div class="popular-lite-list_item">
         <img
           class="_item-img"
-          src="https://zzerx.cn/Artwork/artslow/photography/photography3.png"
+          src="/public/fakerImages/img1.png"
           alt=""
         />
         <div>
@@ -20,8 +20,7 @@
           <div class="_item-userinfo">
             <img
               class="_item-avatar"
-              src="	https://zzerx.cn/Artwork/art/illustration/illustration2.png
-"
+              src="/public/fakerAvatar/avatar1.png"
               alt="avatar"
             />
             <span class="_item-author">吃货的世界</span>
@@ -32,11 +31,11 @@
           <h4>23.2w</h4>
         </div>
       </div>
-         <!-- item - end -->
-             <div class="popular-lite-list_item">
+      <!-- item - end -->
+      <div class="popular-lite-list_item">
         <img
           class="_item-img"
-          src="https://zzerx.cn/Artwork/artslow/photography/photography10.png"
+         src="/public/fakerImages/img2.png"
           alt=""
         />
         <div>
@@ -44,8 +43,7 @@
           <div class="_item-userinfo">
             <img
               class="_item-avatar"
-              src="	https://zzerx.cn/Artwork/art/illustration/illustration1.png
-"
+              src="/public/fakerAvatar/avatar2.png"
               alt="avatar"
             />
             <span class="_item-author">吃货的世界</span>
@@ -56,10 +54,10 @@
           <h4>1.7.2w</h4>
         </div>
       </div>
-          <div class="popular-lite-list_item">
+      <div class="popular-lite-list_item">
         <img
           class="_item-img"
-          src="https://zzerx.cn/Artwork/artslow/photography/photography4.png"
+          src="/public/fakerImages/img3.png"
           alt=""
         />
         <div>
@@ -67,8 +65,7 @@
           <div class="_item-userinfo">
             <img
               class="_item-avatar"
-              src="	https://zzerx.cn/Artwork/art/illustration/illustration3.png
-"
+              src="/public/fakerAvatar/avatar3.png"
               alt="avatar"
             />
             <span class="_item-author">吃货的世界</span>
@@ -80,13 +77,13 @@
         </div>
       </div>
     </div>
- 
-    
+
     <!-- 作品排行榜 end -->
   </div>
 </template>
 
 <script setup>
+
 </script>
 
 <style scoped>
