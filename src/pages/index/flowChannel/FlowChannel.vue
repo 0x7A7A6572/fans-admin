@@ -1,5 +1,5 @@
 <template>
-  <el-row :gutter="20" class="cardBox ">
+  <el-row :gutter="20" class="cardBox">
     <el-col :span="10" class="flow-data">
       <div class="cardStyle fc-cardHeight">
         <span class="fast-flex"
@@ -9,7 +9,7 @@
       </div>
       <!-- 流量类型分布 短视频达人 带货主播 KOC -->
     </el-col>
-    <el-col :span="14" >
+    <el-col :span="14">
       <!-- 达人短视频数据(open) / 直播带货数据 / KOC种草数据 -->
       <el-tabs
         v-model="activeName"
@@ -90,7 +90,7 @@
 </template>
 
 <script setup>
-import DistributionCard from "./DistributionCard.vue";
+import DistributionCard from "../components/DistributionCard.vue";
 import { ref, onMounted } from "vue";
 import * as echarts from "echarts";
 const activeName = ref("first");
@@ -107,7 +107,11 @@ function init() {
     legend: {
       bottom: "0%",
       left: "center",
-      color: "#FFF",
+      textStyle: {
+        //图例文字的样式
+        color: "#white",
+        fontSize: 16,
+      },
     },
     series: [
       {
@@ -141,7 +145,6 @@ function init() {
 
   option && flowChannelChart.setOption(option);
   clearTimeout(timmerEchar);
-  // console.log("SSSSS")
 }
 
 let timmerEchar = null;
@@ -165,7 +168,8 @@ function changeWidthFC() {
 
 #FlowChannelChartDom {
   height: 100%;
-  min-height: 300px;
+  min-height: 280px;
+  max-height: 280px;
   /* height: 90%;
   width: 100%; */
   margin-bottom: 15px;
@@ -234,7 +238,7 @@ function changeWidthFC() {
   z-index: var(--el-index-normal);
 }
 /** 同类卡片高度 */
-.fc-cardHeight{
+.fc-cardHeight {
   height: 320px;
 }
 </style>

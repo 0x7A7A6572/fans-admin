@@ -1,48 +1,47 @@
 <template>
-  <view>
-    <el-row>
-      <el-col :span="24" class="main-contorl-title">
-        <div>
-          <span class="main-contorl-title__mian">品牌流量渠道</span>
-          <span class="main-contorl-title__info">渠道已建立180天</span>
-        </div>
-        <span class="main-contorl-title__more fast-flex"
-          >查看更多流量渠道数据<el-icon><ArrowRightBold /></el-icon
-        ></span>
-      </el-col>
-      <!-- 流量类型分布-环形数据可视化 -->
-      <FlowChannel></FlowChannel>
-    </el-row>
-    <!-- 品牌流量洞察 -->
-    <el-row>
-      <el-col :span="24" class="main-contorl-title">
-        <div>
-          <span class="main-contorl-title__mian">品牌流量洞察</span>
-          <span class="main-contorl-title__info"></span>
-        </div>
-        <span class="main-contorl-title__more fast-flex"
-          >查看更多流量洞察数据<el-icon><ArrowRightBold /></el-icon
-        ></span>
-      </el-col>
-      <!-- 品牌流量洞察左右卡片 -->
-      <el-col :span="24">
-        <TrafficInsight></TrafficInsight>
-      </el-col>
-      <!-- 曝光数据 -->
-      <el-col :span="24">
-        <ExposureData></ExposureData>
-      </el-col>
-    </el-row>
-    <!-- 商业流量洞察 -->
-    <BusinessFlowInsight></BusinessFlowInsight>
-  </view>
+  <!-- <div> -->
+  <el-row>
+    <el-col :span="24" class="main-contorl-title">
+      <div>
+        <span class="main-contorl-title__mian">品牌流量渠道</span>
+        <span class="main-contorl-title__info">渠道已建立180天</span>
+      </div>
+      <span class="main-contorl-title__more fast-flex"
+        >查看更多流量渠道数据<el-icon><ArrowRightBold /></el-icon
+      ></span>
+    </el-col>
+  </el-row>
+  <!-- 流量类型分布-环形数据可视化 -->
+  <FlowChannel></FlowChannel>
+  <!-- 品牌流量洞察 -->
+  <el-row>
+    <el-col :span="24" class="main-contorl-title">
+      <div>
+        <span class="main-contorl-title__mian">品牌流量洞察</span>
+        <span class="main-contorl-title__info"></span>
+      </div>
+      <span class="main-contorl-title__more fast-flex"
+        >查看更多流量洞察数据<el-icon><ArrowRightBold /></el-icon
+      ></span>
+    </el-col>
+  </el-row>
+  <!-- 品牌流量洞察左右卡片 -->
+  <!-- <el-row class="" :gutter="20"> -->
+  <TrafficInsight></TrafficInsight>
+  <!-- </el-row> -->
+
+  <!-- 曝光数据 -->
+  <ExposureData></ExposureData>
+  <!-- 商业流量洞察 -->
+  <BusinessFlowInsight></BusinessFlowInsight>
+  <!-- </div> -->
 </template>
 
 <script setup>
-import FlowChannel from "./components/FlowChannel.vue";
-import TrafficInsight from "./components/TrafficInsight.vue";
-import ExposureData from "./components/ExposureData.vue";
-import BusinessFlowInsight from "./components/BusinessFlowInsight.vue";
+import FlowChannel from "./flowChannel/FlowChannel.vue";
+import TrafficInsight from "./trafficInsight/TrafficInsight.vue";
+import ExposureData from "./exposureData/ExposureData.vue";
+import BusinessFlowInsight from "./businessFlowInsight/BusinessFlowInsight.vue";
 </script>
 
 <style >

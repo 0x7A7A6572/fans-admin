@@ -1,69 +1,75 @@
 <template>
-  <el-row class="cardBox" :gutter="20">
-    <el-col :span="16">
-      <div class="cardStyle">
-        <!-- 标题 -->
-        <el-col :span="24" class="popular-lite-title">
-          <span style="flex: 1">销售预览</span>
-          <el-date-picker
-            class="exposure-data-picker"
-            type="daterange"
-            start-placeholder="2022-10-09"
-            end-placeholder="2022-10-30"
-          />
-          <el-button-group class="ml-4 switch-list">
-            <el-button class="active">本品</el-button>
-            <el-button>竞品</el-button>
-          </el-button-group>
-        </el-col>
-        <!-- 数据比较 -->
-        <el-row>
-          <el-col :span="12" class="_date-left">
-            <DataContrast
-              title="本月总销量"
-              value="45.7w"
-              :percentage="12.2"
-              color="var(--strongText)"
-            ></DataContrast>
-            <DataContrast
-              title="本月GMV"
-              value="364.8w"
-              :percentage="8.2"
-              color="var(--strongText)"
-            ></DataContrast>
-          </el-col>
-          <el-col :span="12" class="_date-left">
-            <DataContrast
-              title="本月总销量"
-              value="345.7w"
-              :percentage="-2.0"
-              color="var(--strongText2)"
-            ></DataContrast>
-            <DataContrast
-              title="本月GMV"
-              value="7,234.6w"
-              :percentage="5.1"
-              color="var(--strongText2)"
-            ></DataContrast>
-          </el-col>
-        </el-row>
-        <el-row>
-          <div id="playTrendBf"></div>
-        </el-row>
-      </div>
+  <el-row class="exposure-data cardStyle">
+    <!-- 标题 -->
+    <el-col :span="24" class="popular-lite-title">
+      <span style="flex: 1">曝光数据</span>
+      <el-date-picker
+        class="exposure-data-picker"
+        type="daterange"
+        start-placeholder="2022-10-09"
+        end-placeholder="2022-10-30"
+      />
     </el-col>
-    <el-col :span="8">
-      <div class="cardStyle">
-        <PopularSimpleList :rankingList="rankingList"></PopularSimpleList>
-      </div>
+    <!-- 数据比较 -->
+    <el-col :span="12" class="_date-left">
+      <DataContrast
+        title="周作品"
+        value="2,324"
+        :percentage="12.5"
+        color="var(--strongText)"
+      ></DataContrast>
+      <DataContrast
+        title="周总获取数"
+        value="125.3w"
+        :percentage="11.3"
+        color="var(--strongText)"
+      ></DataContrast>
+    </el-col>
+    <el-col :span="12" class="_date-left">
+      <DataContrast
+        title="周总获取数"
+        value="125.3w"
+        :percentage="11.3"
+        color="var(--strongText2)"
+      ></DataContrast>
+      <DataContrast
+        title="周总获取数"
+        value="125.3w"
+        :percentage="11.3"
+        color="var(--strongText2)"
+      ></DataContrast>
+    </el-col>
+    <!-- 折线图 -->
+    <el-col :span="24">
+      <div id="playTrend"></div>
+    </el-col>
+    <!-- 达人粉丝量级 -->
+    <el-col :span="13">
+      <span class="is-title">达人粉丝量级</span>
+      <DistrDubble
+        :max="30"
+        :min="0"
+        :grade="['<1', '1-10W', '10-100W', '100w-500w', '500-1000w', '>1000w']"
+        :thisProduct="[0, 9, 15, 24, 4, 2]"
+        :competitors="[0, 9, 3, 10, 1, 0]"
+      ></DistrDubble>
+    </el-col>
+    <!-- 达人类别分布 -->
+    <el-col :span="11">
+      <span class="is-title"> 达人类别分布 </span>
+      <DistrDubbleTag
+        :thisProduct="thisProduct"
+        :competitors="competitors"
+      ></DistrDubbleTag>
     </el-col>
   </el-row>
 </template>
 
 <script setup>
-import DataContrast from "./DataContrast.vue";
-import PopularSimpleList from "./PopularSimpleList.vue";
+import DistrDubble from "../components/DistrDubble.vue";
+import DistrDubbleTag from "../components/DistrDubbleTag.vue";
 import { onMounted, ref } from "vue";
+import DataContrast from "../components/DataContrast.vue";
 import * as echarts from "echarts";
 
 let playTrendChartDom;
@@ -81,14 +87,14 @@ function changeWidth() {
   playTrendChart.resize();
 }
 function init() {
-  playTrendChartDom = document.getElementById("playTrendBf");
+  playTrendChartDom = document.getElementById("playTrend");
   playTrendChart = echarts.init(playTrendChartDom);
   var option;
 
   option = {
     top: 20,
     left: 10,
-    right: 10,
+    right: 30,
     barWidth: "25%",
     title: {
       top: 0,
@@ -187,7 +193,7 @@ function init() {
             return value + " ml";
           },
         },
-        data: [112.0, 44.9, 67.0, 123.2, 25.6, 76.7, 135.6],
+        data: [112.0, 44.9, 7.0, 23.2, 25.6, 76.7, 135.6],
       },
       {
         name: "竞品",
@@ -207,7 +213,7 @@ function init() {
             return value + " ml";
           },
         },
-        data: [99.6, 65.9, 49.0, 26.4, 68.7, 70.7, 175.6],
+        data: [99.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6],
       },
       {
         name: "获赞量(线)",
@@ -242,63 +248,68 @@ function init() {
   clearTimeout(timerChartDwar);
 }
 
-/** 数据 */
-let rankingList = [
+/* 数据 */
+let thisProduct = ref([
   {
-    name: "吃货的世界",
-    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration11.png",
-    salesCount: 6531,
-    salesVolume: 171000,
+    class: "美食",
+    percentage: "29.4%",
   },
   {
-    name: "地主家的傻女儿",
-    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration1.png",
-    salesCount: 5133,
-    salesVolume: 159000,
+    class: "剧情搞笑",
+    percentage: "19.6%",
   },
   {
-    name: "我的零食铺",
-    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration2.png",
-    salesCount: 5678,
-    salesVolume: 146000,
+    class: "颜值达人",
+    percentage: "19.6%",
   },
   {
-    name: "大胖",
-    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration4.png",
-    salesCount: 1985,
-    salesVolume: 99000,
+    class: "运动健身",
+    percentage: "9.8%%",
   },
   {
-    name: "大叔就爱吃",
-    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration5.png",
-    salesCount: 2543,
-    salesVolume: 67000,
+    class: "时尚",
+    percentage: "3.9%",
   },
   {
-    name: "美食家",
-    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration6.png",
-    salesCount: 694,
-    salesVolume: 60000,
+    class: "二次元",
+    percentage: "3.9%",
+  },
+]);
+let competitors = ref([
+  {
+    class: "剧情搞笑",
+    percentage: "29.4%",
   },
   {
-    name: "姐弟一起吃",
-    avatar: "https://zzerx.cn/Artwork/art/illustration/illustration9.png",
-    salesCount: 2699,
-    salesVolume: 67000,
+    class: "颜值达人",
+    percentage: "23.5%",
   },
-];
+  {
+    class: "生活",
+    percentage: "23.5%",
+  },
+  {
+    class: "美妆",
+    percentage: "11.8%%",
+  },
+  {
+    class: "测评",
+    percentage: "5.9%",
+  },
+  {
+    class: "财经投资",
+    percentage: "5.9%",
+  },
+]);
 </script>
 
-<style scoped>
-.popular-lite-title{
-  display: flex !important;
-}
-.cardKK {
-  background-color: var(--cardBg);
-  min-height: 300px;
-  border-radius: 12px;
-  /* padding: 15px; */
-  /* margin: 15px; */
+<style>
+.popular-lite-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--notImportantText);
+  padding-bottom: 10px;
+  height: fit-content;
 }
 .exposure-data-picker {
   /* flex: 0; */
@@ -306,28 +317,15 @@ let rankingList = [
   width: 200px !important;
   background-color: var(--cardBg) !important;
 }
-.switch-list {
-  display: flex;
-  align-items: center;
-  margin: 0px 10px;
-}
-.switch-list .el-button {
-  background-color: var(--cardBg);
-  border: 1px solid var(--strongText);
-  color: var(--strongText);
-  /* font-weight: bold; */
-  height: 1.5rem;
-}
-.switch-list .el-button.active {
-  background-color: var(--strongText);
-  color: var(--cardBg);
-}
+
 ._date-left {
-  /* min-height: 200px; */
-}
-#playTrendBf {
-  height: 350px;
-  width: 100%;
+  display: flex;
 }
 
+#playTrend {
+  /* padding: 15px; */
+  /* min-height: 300px;
+  max-height: 400px; */
+  height: 350px;
+}
 </style>

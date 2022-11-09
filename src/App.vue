@@ -4,7 +4,6 @@
 import NavAdmin from "./components/NavAdmin.vue";
 // import { ElAffix, ElPageHeader, ElTag, ElAvatar, ElButton } from "element-plus";
 import LeftMenu from "./components/LeftMenu.vue";
-import channel from "./pages/index/components/index.vue";
 </script>
 
 <template>
