@@ -42,9 +42,16 @@
             <span>达人与粉丝资产</span>
           </template>
           <el-menu-item-group title="达人资产概况">
-            <el-menu-item index="3-1">短视频达人</el-menu-item>
-            <el-menu-item index="3-2">带货主播</el-menu-item>
-            <el-menu-item index="3-3">KOC</el-menu-item>
+            <div class="menu-checkbox">
+              <span class="active">
+                <router-link to="/assets/assets"> 短视频达人 </router-link>
+                </span>
+              <span>带货主播</span>
+              <span>KOC</span>
+            </div>
+            <!-- <el-menu-item  index="3-1">短视频达人</el-menu-item>
+            <el-menu-item class="menu-checkbox-item" index="3-2">带货主播</el-menu-item>
+            <el-menu-item class="menu-checkbox-item" index="3-3">KOC</el-menu-item> -->
           </el-menu-item-group>
         </el-sub-menu>
         <el-sub-menu index="4">
@@ -84,6 +91,7 @@ const handleClose = (key, keyPath) => {
 .left-menu {
   background-color: var(--mainBg);
   height: 100%;
+  user-select: none;
 }
 .el-menu-vertical {
   border-right: none;
@@ -98,20 +106,44 @@ const handleClose = (key, keyPath) => {
   font-size: 16px;
 }
 /** 深层次的active应用 */
-.el-menu-item a{
- color: white;
- text-decoration: none;
- width: 100%;
+.el-menu-item a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
 }
-.el-menu-item.is-active a{
- color: var(--el-menu-active-color);
- text-decoration: none;
+.el-menu-item.is-active a {
+  color: var(--el-menu-active-color);
+  text-decoration: none;
 }
-.el-menu-item.is-active{
- /* background-color: rgba(248, 181, 1, 0.3); */
- background-color: var(--muneActivte);
+.el-menu-item.is-active {
+  /* background-color: rgba(248, 181, 1, 0.3); */
+  background-color: var(--muneActivte);
 }
-.el-sub-menu__title{
+.el-sub-menu__title {
   justify-content: left;
+}
+
+.menu-checkbox {
+  display: flex;
+  /* position: relative; */
+  /* width: 100px;
+  height: 100px; */
+  max-width: 10rem;
+  color: white;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.menu-checkbox > span {
+  color: var(--mainText);
+  font-weight: bold;
+  background-color: var(--thirdText);
+  margin: 5px;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: smaller;
+}
+.menu-checkbox > span.active {
+  background-color: var(--strongText);
+  color: var(--cardItem) !important;
 }
 </style>

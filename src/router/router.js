@@ -23,7 +23,12 @@ const routes = [
         name: 'optimization',
         path: '/channel/optimization',
         component: () => import('../pages/channel/optimization/optimization.vue')
-    }
+    },
+    {
+        name: 'assets',
+        path: '/assets/assets',
+        component: () => import('../pages/assets/assets.vue')
+    },
 
 ];
 

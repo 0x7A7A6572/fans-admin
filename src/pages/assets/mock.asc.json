@@ -1,0 +1,129 @@
+{
+  "type": [
+    "美食",
+    "颜值达人",
+    "剧情搞笑",
+    "生活",
+    "时尚",
+    "母婴亲子",
+    "评测",
+    "旅行",
+    "汽车",
+    "汽车",
+    "汽车",
+    "母婴亲子",
+    "汽车"
+  ],
+  "data": {
+    "yzdr": [
+      {
+        "user": {
+          "name": "米妮妹",
+          "avatar": "/public/fakerAvatar/avatar2.png",
+          "sex": 0,
+          "type": [
+            "颜值达人",
+            "情感"
+          ],
+          "addr": "辽宁-沈阳"
+        },
+        "leve": "S",
+        "fans": 4669120,
+        "fansup": 25000,
+        "weekzp": 2,
+        "weekview": 7672154,
+        "weekget": 373124,
+        "weekccp": 16,
+        "mention": [
+          "本品",
+          "竞品"
+        ]
+      },
+      {
+        "user": {
+          "name": "小可爱",
+          "avatar": "/public/fakerAvatar/avatar1.png",
+          "sex": 0,
+          "type": [
+            "剧情搞笑"
+          ],
+          "addr": "重庆市"
+        },
+        "leve": "A",
+        "fans": 11541231,
+        "fansup": -35,
+        "weekzp": 5,
+        "weekview": 3369415,
+        "weekget": 155123,
+        "weekccp": 50,
+        "mention": [
+          "本品",
+          "竞品"
+        ]
+      },
+      {
+        "user": {
+          "name": "梅子姐姐",
+          "avatar": "/public/fakerAvatar/avatar3.png",
+          "sex": 0,
+          "type": [
+            "美妆"
+          ],
+          "addr": "广东-广州"
+        },
+        "leve": "S",
+        "fans": 6471254,
+        "fansup": 9554,
+        "weekzp": 6,
+        "weekview": 1301245,
+        "weekget": 119231,
+        "weekccp": 138,
+        "mention": [
+          "本品"
+        ]
+      },
+      {
+        "user": {
+          "name": "XXXX",
+          "avatar": "/public/fakerAvatar/avatar4.png",
+          "sex": 1,
+          "type": [
+            "美妆"
+          ],
+          "addr": "广西-南宁"
+        },
+        "leve": "S",
+        "fans": 6471254,
+        "fansup": 9554,
+        "weekzp": 6,
+        "weekview": 1301245,
+        "weekget": 119231,
+        "weekccp": 138,
+        "mention": [
+          "本品"
+        ]
+      },
+      {
+        "user": {
+          "name": "sdasda",
+          "avatar": "/public/fakerAvatar/avatar5.png",
+          "sex": 0,
+          "type": [
+            "美妆"
+          ],
+          "addr": "广东-广州"
+        },
+        "leve": "S",
+        "fans": 6471254,
+        "fansup": 9554,
+        "weekzp": 6,
+        "weekview": 1301245,
+        "weekget": 119231,
+        "weekccp": 138,
+        "mention": [
+          "本品"
+        ]
+      }
+    ]
+  }
+}

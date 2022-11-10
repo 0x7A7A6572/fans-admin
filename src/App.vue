@@ -23,6 +23,18 @@ import LeftMenu from "./components/LeftMenu.vue";
 </template>
 
 <style>
+ul,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+button{
+  background: transparent;
+  color: var(--secondText);
+  border: 1px solid var(--secondText);
+  border-radius: 5px;
+  white-space: nowrap;
+}
 :root {
   --mainBg: rgb(26, 25, 30);
   --cardBg: rgb(32, 33, 42);
@@ -65,7 +77,7 @@ import LeftMenu from "./components/LeftMenu.vue";
 
 body {
   margin: 0px;
-  min-width: 1200px;
+  min-width: 1300px;
   background-color: var(--mainBg);
 }
 
@@ -104,5 +116,28 @@ a {
 /** 覆盖 */
 .el-page-header__header {
   flex: 1;
+}
+
+.el-select-v2__wrapper{
+  background-color: transparent !important;
+  border: 1px solid var(--secondText) !important;
+}
+
+.el-checkbox__inner,.el-input__wrapper{
+  background-color: transparent !important;
+}
+.el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: var(--strongText2)  !important;
+}
+
+.el-table tr{
+  background-color: var(--cardBg) !important;
+}
+.el-table th.el-table__cell{
+
+  background-color: var(--cardItemHover) !important;
+}
+.el-table{
+  border-radius: 12px;
 }
 </style>

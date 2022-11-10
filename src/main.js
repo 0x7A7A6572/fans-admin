@@ -7,7 +7,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import router from './router';
 
 import DataContrast from "./components/DataContrast.vue";
-
+import Tools from "./tools/tools";
 // import {
 //   ElAffix,
 //   ElPageHeader,
@@ -28,8 +28,11 @@ app//.component("elAffix", ElAffix)
   // .component("ElCol", ElCol)
   // .component("ElRow", ElRow)
 
-  .component("DataContrast",DataContrast);
+  .component("DataContrast", DataContrast);
 app.use(ElementPlus);
+
+//挂载到全局
+app.config.globalProperties.$tools = Tools;
 /* 导入图标 */
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
